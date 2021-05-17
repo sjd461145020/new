@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+</head>
+<meta charset="UTF-8">
+<title>Title</title>
+
+</head>
+<body>
+<form id="myForm">
+    <table>
+        <tr>
+            <td>id</td>
+            <td><input class="form-control" id="id" name="id" readonly></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td><input class="form-control" id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input class="form-control" id="mima" name="mima"></td>
+        </tr>
+        <tr>
+            <td>部门</td>
+            <td>
+                <select class="form-control" id="bumenid" name="bumenid">
+                    <option value="-1">选择</option>
+                    <option value="1">武打</option>
+                    <option value="2">搞笑</option>
+                    <option value="3">恐怖</option>
+                </select>
+        </tr>
+        <tr>
+            <td>职位</td>
+            <td>
+                <select class="form-control" id="zhiweiid" name="zhiweiid">
+                    <option value="-1">选择</option>
+                    <option value="1">武打</option>
+                    <option value="2">搞笑</option>
+                    <option value="3">恐怖</option>
+                </select>
+        </tr>
+        <tr>
+            <td>薪资</td>
+            <td><input class="form-control" id="price" name="price"></td>
+        </tr>
+        <tr>
+            <td>座右铭</td>
+            <td><input class="form-control" id="zuoyouming" name="zuoyouming"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

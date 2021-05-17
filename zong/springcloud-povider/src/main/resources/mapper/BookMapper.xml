@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.BookDao">
+
+    <select id="getliebiao" resultType="com.jk.entity.BookEntity">
+        SELECT * FROM `t_zubiao` a
+        left join t_bumen b on a.bumenid=b.id
+        left join t_zhiwei c on a.zhiweiid=c.id
+        <include refid="tc"></include>
+        LIMIT #{kaishi},#{jieshu}
+    </select>
+    <select id="count" resultType="int">
+        SELECT count(1) FROM `t_zubiao` a
+        left join t_bumen b on a.bumenid=b.id
+        left join t_zhiwei c on a.zhiweiid=c.id
+        <include refid="tc"></include>
+    </select>
+
+    <insert id="add">
+        INSERT INTO `sjd`.`t_zubiao`
+        (`name`, `mima`, `zhiweiid`, `bumenid`, `price`, `zuoyouming`)
+         VALUES
+         (#{name},#{mima},#{zhiweiid},#{bumenid},#{price},#{zuoyouming})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM `sjd`.`t_zubiao` WHERE `id` = #{0}
+    </delete>
+    <select id="huixian" resultType="com.jk.entity.BookEntity">
+        SELECT * FROM `t_zubiao` a
+        left join t_bumen b on a.bumenid=b.id
+        left join t_zhiwei c on a.zhiweiid=c.id
+        where a.id=#{0}
+    </select>
+    <update id="update">
+        UPDATE `sjd`.`t_zubiao` SET
+ `name` = #{name}, `mima` = #{mima}, `zhiweiid` =#{zhiweiid},
+ `bumenid` = #{bumenid}, `price` = #{price}, `zuoyouming` = #{zuoyouming}
+ WHERE `id` = #{id}
+    </update>
+
+    <sql id="tc">
+        <where>
+            <if test="bumenid !=null and bumenid !=-1">
+                and bumenid=${bumenid}
+            </if>
+        </where>
+    </sql>
+</mapper>

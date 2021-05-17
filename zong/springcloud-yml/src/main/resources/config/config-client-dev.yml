@@ -1,0 +1,4 @@
+test: a
+
+server:
+  port: 8086

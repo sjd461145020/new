@@ -1,12 +1,6 @@
 package com.jk.entity;
 
-/**
-* @Author: SJD
-* @Description:
-* @Date: 2021/5/17 22:33
-* @Param:
-* @Return: 
-**/
+
 public class BookEntity {
 
     //   员工表：id、姓名、密码、职位、部门、薪资、座右铭
